@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Damage Report</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('cimage2.jpg'); /* Replace 'background-image.jpg' with the path to your background image */
+        background-size: cover;
+        background-position: center;
+    }
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.8); /* Adjust the opacity as needed */
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .options {
+        display: flex;
+        flex-wrap: wrap;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    .option {
+        margin: 10px;
+        cursor: pointer;
+        padding: 15px 20px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        background-color: #fff;
+        transition: all 0.3s ease;
+    }
+    .option:hover {
+        background-color: #f0f0f0;
+    }
+    .selected {
+        background-color: #007bff;
+        color: #fff;
+    }
+    #submitBtn {
+        display: block;
+        width: 100%;
+        padding: 15px 0;
+        border: none;
+        border-radius: 10px;
+        background-color: #28a745;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    #submitBtn:hover {
+        background-color: #218838;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>Select Car Damage:</h2>
+        <form id="damageForm" onsubmit="submitForm(event)">
+            <ul class="options">
+                <!-- Your list items here -->
+                <li class="option" onclick="toggleOption(this)">Scratch</li>
+                <li class="option" onclick="toggleOption(this)">Dent</li>
+                <li class="option" onclick="toggleOption(this)">Crack</li>
+                <li class="option" onclick="toggleOption(this)">Broken Glass</li>
+                <li class="option" onclick="toggleOption(this)">Headlight Damage</li>
+                <li class="option" onclick="toggleOption(this)">Tail Light Damage</li>
+                <li class="option" onclick="toggleOption(this)">Bumper Damage</li>
+                <li class="option" onclick="toggleOption(this)">Mirror Damage</li>
+                <li class="option" onclick="toggleOption(this)">Wheel Damage</li>
+                <li class="option" onclick="toggleOption(this)">Car rust</li>
+                <li class="option" onclick="toggleOption(this)">Windshield cracks</li>
+                <li class="option" onclick="toggleOption(this)">Alloy wheel damage</li>
+                <li class="option" onclick="toggleOption(this)">Oxygen Sensor replacement.</li>
+                <li class="option" onclick="toggleOption(this)">Oil changes.</li>
+                <li class="option" onclick="toggleOption(this)">The Electrical System</li>
+                <li class="option" onclick="toggleOption(this)">The Ignition System</li>
+                <li class="option" onclick="toggleOption(this)">Aftermarket Alarm removal</li>
+                <li class="option" onclick="toggleOption(this)">Engine Misfire</li>
+                <li class="option" onclick="toggleOption(this)">Air bag development</li>
+                <li class="option" onclick="toggleOption(this)">Steering development</li>
+                <li class="option" onclick="toggleOption(this)">Engine Survicing</li>
+                <li class="option" onclick="toggleOption(this)">Car Washing with fuel tank</li>
+
+            </ul>
+            <button id="submitBtn" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function toggleOption(option) {
+            option.classList.toggle('selected');
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            var selectedOptions = document.querySelectorAll('.selected');
+            var selectedValues = Array.from(selectedOptions).map(option => option.textContent);
+            console.log('Selected options:', selectedValues);
+            // Redirect to another page
+            window.location.href = "thankYou.html";
+        }
+    </script>
+</body>
+</html>
